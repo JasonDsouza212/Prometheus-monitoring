@@ -1,0 +1,27 @@
+apiVersion: monitoring.coreos.com/v1alpha1
+metadata: AltermanagerConfig
+  name: main-rules-alert-config
+  namespace: monitoring
+spec:
+  route:
+    routes:
+      receiver: 'email'
+      repeatInterval: 30m
+    - matchers:
+      - name: alertname
+        value: HIGH CPU LOAD
+    - matchers:  
+      - name: alertname
+        value: K8s POD CRASH
+      repeatInterval: 30m
+  receivers:
+  - name: 'email'
+    emailConfig:
+    - to: 'jasondsouza212@gmail.com'
+      from: 'jasondsoiza212@gmail.com'
+      smarthost: 'smtp.gmail.com:587'
+      authUsername: 'jasondsouza212@gmail.com'
+      authIdentity: 'jasondsouza212@gmail.com'
+      authPassword:
+        name: gmail-auth
+        key: password
