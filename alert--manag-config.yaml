@@ -18,7 +18,7 @@ spec:
   - name: 'email'
     emailConfig:
     - to: 'jasondsouza212@gmail.com'
-      from: 'jasondsoiza212@gmail.com'
+      from: 'jasondsoza212@gmail.com'
       smarthost: 'smtp.gmail.com:587'
       authUsername: 'jasondsouza212@gmail.com'
       authIdentity: 'jasondsouza212@gmail.com'
